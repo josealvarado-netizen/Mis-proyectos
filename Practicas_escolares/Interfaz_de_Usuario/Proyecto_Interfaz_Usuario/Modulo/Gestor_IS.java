@@ -1,0 +1,29 @@
+package Proyecto.Modulo;
+
+import Proyecto.ConexionBD;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Gestor_IS {
+
+    public boolean verificarUsuarioEnBD(String correo, String contrasena) {
+        String sql = "SELECT correo FROM Usuario WHERE correo = ? AND contraseña = ?";
+
+        try (Connection conn = ConexionBD.getConexion();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, correo);
+            stmt.setString(2, contrasena);
+            ResultSet rs = stmt.executeQuery();
+
+            // Si se encuentra un resultado, el usuario es válido
+            return rs.next();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false; // Si ocurre un error o no hay coincidencia, devuelve false
+    }
+}
