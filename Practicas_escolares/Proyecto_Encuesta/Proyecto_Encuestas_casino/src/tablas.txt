@@ -1,0 +1,58 @@
+CREATE DATABASE IF NOT EXISTS DB_Encuesta;
+
+USE DB_Encuesta;
+
+SHOW DATABASES;
+
+CREATE TABLE IF NOT EXISTS usuarios(
+
+rol VARCHAR(20) NOT NULL,
+nombre VARCHAR(50) NOT NULL,
+apellido VARCHAR(50) NOT NULL,
+fecha_Nac VARCHAR(20) NOT NULL,
+edad INT NOT NULL,
+id_Ine VARCHAR(20) NOT NULL,
+correo VARCHAR(100) NOT NULL,
+contraseña VARCHAR(100) NOT NULL,
+
+PRIMARY KEY (correo,id_Ine)
+
+);
+
+
+REATE TABLE preguntas(
+
+id_preg VARCHAR(10) PRIMARY KEY,
+pregunta TEXT NOT NULL,
+id_juego VARCHAR(20),
+tipo VARCHAR(10)
+
+);
+
+CREATE TABLE respuestas(
+
+id_respuesta INT AUTO_INCREMENT PRIMARY KEY,
+id_preg VARCHAR(10),
+respuesta TEXT,
+fecha DATE
+
+);
+
+CREATE TABLE aviso_privacidad(
+
+id INT PRIMARY KEY,
+
+contenido TEXT NOT NULL
+
+);
+
+CREATE TABLE Centros_Ayuda(
+id INT PRIMARY KEY,
+nombre VARCHAR(100),
+direccion VARCHAR(100),
+telefono VARCHAR(15)
+);
+
+
+
+
