@@ -1,0 +1,32 @@
+Objetivo del proyecto
+    Poder realizar un compilador que ejecute algunas funciones como lo son declaracion de variables, estructuras de control
+    operaciones aritmeticas y logicas, entradas y salidas basicas.
+
+ Instrucciones:
+    Realizamos obtenemos los archivos necesarios de antlr (si es la primera vez y no tienes los archivos)
+        *Puede obtenerse mediante un compilador generando los archivos antlr descado el programa y teniendo los archivos jar
+        el cual es "antlr-4.13.2-complete.jar"
+
+    O se pueden general mediante terminal:
+        *abrimos la terminal
+        *colocamos la direccion donde tenemos el programa
+            Ejemplo: cd C:\Users\allen\OneDrive\Documentos\universisdad\25P trimestre\Traductores\Proyecto_final\Proyecto\src
+        *dentro de la carpeta colocamos lo sigquiene:
+            Ejemplo: java -jar antlr-4.13.2-complete.jar -visitor -no-listener Ru.g4
+
+Con los archivos listos de Antlr4 podemos proceder a la compilacion:
+
+teniendo los archivos de JavaFX compilamos el programa con el siguiente codigo:
+    *javac --module-path "C:\JavaFx\javafx-sdk-23.0.1\lib" --add-modules javafx.controls,javafx.fxml "C:\Users\allen\OneDrive\Documentos\universisdad\25P trimestre\Traductores\Proyecto_final\Proyecto\src\Main.java"
+
+    teniendo la direccion donde tenemos la carpeta de las bibliotecas necesarias para JavaFX y la carperta donde tenemos nuestro main
+
+Posteriormente colocamos lo siguinte para poder compilarlo.
+    * java --module-path "C:\JavaFx\javafx-sdk-23.0.1\lib" --add-modules javafx.controls,javafx.fxml -cp "C:\Users\allen\OneDrive\Documentos\universisdad\25P trimestre\Traductores\Proyecto_final\Proyecto\src" Main
+
+    una vez compilado nos desplegara la interfaz de usuario para poder acceder al codigo.
+
+    acontinacion se presenta un ejemplo visual:
+
+
+    
